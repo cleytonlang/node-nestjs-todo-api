@@ -9,7 +9,7 @@
     
 ## Description
 
-This is an API simulating a CRUD of tasks where it is necessary to log in to the system. I used TypeORM in the database layer and Swagger for documentation to facilitate the understanding of each endpoint.
+This is an API simulating a CRUD of tasks where it is necessary to login to the system. I used TypeORM in the database layer and Swagger for documentation to facilitate the understanding of each endpoint.
 
 ## Installation
 
