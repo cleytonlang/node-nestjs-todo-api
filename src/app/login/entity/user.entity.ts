@@ -5,27 +5,26 @@ import {
   DeleteDateColumn,
   Entity,
   Generated,
-  JoinColumn,
-  ManyToOne,
+  OneToMany,
   PrimaryColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { UserEntity } from '../../login/entity/user.entity';
+import { TodoEntity } from '../../todo/entity/todo.entity';
 
-@Entity({ name: 'todos' })
-export class TodoEntity {
+@Entity({ name: 'users' })
+export class UserEntity {
   @Generated('uuid')
   @ApiProperty()
-  @PrimaryColumn({ type: 'varchar' })
+  @PrimaryColumn()
   id: string;
 
   @Column({ type: 'varchar' })
   @ApiProperty()
-  task: string;
+  username: string;
 
-  @Column({ name: 'is_done', type: 'tinyint', width: 1 })
+  @Column({ type: 'varchar' })
   @ApiProperty()
-  isDone: number;
+  password: string;
 
   @CreateDateColumn({ name: 'created_at' })
   @ApiProperty()
@@ -39,7 +38,6 @@ export class TodoEntity {
   @ApiProperty()
   deletedAt: string;
 
-  @ManyToOne(() => UserEntity, (user) => user.users)
-  @JoinColumn({ name: 'user_id' })
-  user: UserEntity;
+  @OneToMany(() => TodoEntity, (todo) => todo.user)
+  users: TodoEntity[];
 }
