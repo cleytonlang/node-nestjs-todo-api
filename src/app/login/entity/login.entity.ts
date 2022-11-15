@@ -12,10 +12,10 @@ import {
 import { TodoEntity } from '../../todo/entity/todo.entity';
 
 @Entity({ name: 'users' })
-export class UserEntity {
+export class LoginEntity {
   @Generated('uuid')
   @ApiProperty()
-  @PrimaryColumn()
+  @PrimaryColumn({ type: 'varchar' })
   id: string;
 
   @Column({ type: 'varchar' })

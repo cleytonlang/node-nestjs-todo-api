@@ -10,7 +10,7 @@ import {
   PrimaryColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { UserEntity } from '../../login/entity/user.entity';
+import { LoginEntity } from '../../login/entity/login.entity';
 
 @Entity({ name: 'todos' })
 export class TodoEntity {
@@ -39,7 +39,7 @@ export class TodoEntity {
   @ApiProperty()
   deletedAt: string;
 
-  @ManyToOne(() => UserEntity, (user) => user.users)
+  @ManyToOne(() => LoginEntity, (user) => user.users)
   @JoinColumn({ name: 'user_id' })
-  user: UserEntity;
+  user: LoginEntity;
 }

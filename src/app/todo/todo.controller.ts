@@ -13,8 +13,8 @@ import {
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { CreateTodoDto } from './dto/create-todo.dto';
 import { UpdateTodoDto } from './dto/update-todo.dto';
-import { BadRequestSwagger } from './helpers/swagger/bad-request.swagger';
-import { NotFoundSwagger } from './helpers/swagger/not-found.swagger';
+import { BadRequestSwagger } from '../helpers/swagger/bad-request.swagger';
+import { NotFoundSwagger } from '../helpers/swagger/not-found.swagger';
 import { CreateTodoSwagger } from './swagger/create-todo.swagger';
 import { IndexTodoSwagger } from './swagger/index-todo.swagger';
 import { ShowTodoSwagger } from './swagger/show-todo.swagger';
